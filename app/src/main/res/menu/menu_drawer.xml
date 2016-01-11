@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemDrawerAccueil"
+        android:title="Accueil" />
+
+    <item
+        android:id="@+id/itemDrawerAngle"
+        android:title="Angle" />
+
+    <item
+        android:id="@+id/itemDrawerCarteSommet"
+        android:title="Carte Sommet" />
+
+    <item
+        android:id="@+id/itemDrawerPhoto"
+        android:title="Photo" />
+
+</menu>
