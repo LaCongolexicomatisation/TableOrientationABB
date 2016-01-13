@@ -1,5 +1,6 @@
 package fr.lpteprow.abb.tableorientationabb;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //initialisation du contenu (menu) de la navigation
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -95,6 +99,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.itemDrawerAngle) {
 
             Toast.makeText(this, "Angle", Toast.LENGTH_SHORT).show();
+            FragmentAngle fragmentAngle = new FragmentAngle();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment, fragmentAngle);
+            fragmentTransaction.commit();
+
 
         } else if (id == R.id.itemDrawerCarteSommet) {
 
@@ -103,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.itemDrawerPhoto) {
 
             Toast.makeText(this, "Photo", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+            startActivity(intent);
 
         }
 
