@@ -1,18 +1,15 @@
 package fr.lpteprow.abb.tableorientationabb;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //initialisation du contenu (menu) de la navigation
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 
@@ -108,6 +104,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.itemDrawerCarteSommet) {
 
             Toast.makeText(this, "Carte Sommet", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.itemDrawerLocalisation) {
+            FragmentLocalisation fragmentLocalisation = new FragmentLocalisation();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment, fragmentLocalisation);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.itemDrawerPhoto) {
 
