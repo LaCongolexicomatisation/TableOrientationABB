@@ -24,14 +24,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //chargement du fragment par défaut (celui de l'accueil)
+        FragmentAccueil fragmentAccueil = new FragmentAccueil();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, fragmentAccueil);
+        fragmentTransaction.commit();
+
+        //initialisation de la barre d'action
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //initialisation du tiroir de navigation
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        //initialisation du contenu (menu) de la navigation
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -78,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.itemDrawerAccueil) {
 
             Toast.makeText(this, "Accueil", Toast.LENGTH_SHORT).show();
+            FragmentAccueil fragmentAccueil = new FragmentAccueil();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment, fragmentAccueil);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.itemDrawerAngle) {
 
