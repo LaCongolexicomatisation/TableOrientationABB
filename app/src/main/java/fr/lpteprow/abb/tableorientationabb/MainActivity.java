@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.about) {
-            Toast.makeText(this, "Fesse", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment, fragmentAngle);
             fragmentTransaction.commit();
-
 
         } else if (id == R.id.itemDrawerCarteSommet) {
 

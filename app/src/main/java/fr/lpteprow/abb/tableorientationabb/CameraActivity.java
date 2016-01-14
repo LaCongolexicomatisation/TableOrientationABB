@@ -5,9 +5,11 @@ package fr.lpteprow.abb.tableorientationabb;
  */
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 public class CameraActivity extends Activity {
 
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,8 @@ public class CameraActivity extends Activity {
                     .replace(R.id.container, Camera2BasicFragment.newInstance())
                     .commit();
         }
+        imageView = (ImageView) findViewById(R.id.arrow);
+        imageView.setX(-400);
     }
 
 }
